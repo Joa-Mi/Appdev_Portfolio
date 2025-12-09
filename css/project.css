@@ -64,9 +64,7 @@
             font-weight: 500;
         }
 
-        .nav-links a:hover {
-            color: #8b8b8b;
-        }
+
 
         .active-page {
             border-bottom: 2px solid var(--text-color);

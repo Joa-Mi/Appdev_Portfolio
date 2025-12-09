@@ -23,6 +23,14 @@ html.dark-theme body {
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+.dark-theme {
+    --text-color: #e0e0e0;
+    --light-bg: #2d2d2d;
+    --white: #333333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -68,13 +76,15 @@ nav {
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
+    border-bottom: 2px solid transparent;
 }
 
 .nav-links a:hover {
-    color: #8b8b8b;
+    color: #6b6b6b;
+    ;
 }
 
-.active-page {
+.nav-links a.active-page {
     border-bottom: 2px solid var(--text-color);
 }
 
@@ -178,6 +188,10 @@ footer {
 }
 
 .dark-theme body {
+    background-color: #4a4a4a;
+}
+
+.dark-theme html:hover {
     background-color: #4a4a4a;
 }
 

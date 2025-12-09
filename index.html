@@ -7,20 +7,8 @@
     <meta name="description"
         content="Professional portfolio showcasing projects, skills, and experience in web development and technology">
     <title>My Portfolio - Home</title>
-    <script>
-        (async function () {
-            try {
-                const result = await window.storage.get('theme');
-                const savedTheme = result ? result.value : 'light';
-                if (savedTheme === 'dark') {
-                    document.documentElement.classList.add('dark-theme');
-                }
-            } catch (error) {
-                // Default to light theme
-            }
-        })();
-    </script>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -28,7 +16,7 @@
         <nav>
             <div class="logo">My Portfolio</div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active-page">Projects</a></li>
+                <li><a href="index.html" class="active-page">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>

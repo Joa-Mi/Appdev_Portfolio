@@ -2,13 +2,14 @@
 
 
 
-.dark-theme .section-subtitle {
+.dark-mode .section-subtitle {
     color: #aaa;
 }
 
+
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
 }
