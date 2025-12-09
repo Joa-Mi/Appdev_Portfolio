@@ -22,15 +22,40 @@ if (document.getElementById('datetime')) {
     setInterval(updateDateTime, 1000);
 }
 
-// Theme Switcher
+// Theme Switcher - Using window.storage for persistence
 const themeToggle = document.getElementById('themeToggle');
 if (themeToggle) {
-    let isDark = false;
+    // Set button icon based on current theme
+    async function updateButtonIcon() {
+        try {
+            const result = await window.storage.get('theme');
+            const savedTheme = result ? result.value : 'light';
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        } catch (error) {
+            themeToggle.textContent = '🌙';
+        }
+    }
+    
+    updateButtonIcon();
 
-    themeToggle.addEventListener('click', () => {
-        isDark = !isDark;
-        document.body.classList.toggle('dark-theme');
-        themeToggle.textContent = isDark ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', async () => {
+        document.documentElement.classList.toggle('dark-theme');
+        
+        if (document.documentElement.classList.contains('dark-theme')) {
+            themeToggle.textContent = '☀️';
+            try {
+                await window.storage.set('theme', 'dark');
+            } catch (error) {
+                console.error('Failed to save theme:', error);
+            }
+        } else {
+            themeToggle.textContent = '🌙';
+            try {
+                await window.storage.set('theme', 'light');
+            } catch (error) {
+                console.error('Failed to save theme:', error);
+            }
+        }
     });
 }
 

@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get in touch with me for web development projects and collaborations">
     <title>My Portfolio - Contact</title>
+  <script>
+    (async function() {
+        try {
+            const result = await window.storage.get('theme');
+            const savedTheme = result ? result.value : 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+        } catch (error) {
+            // Default to light theme
+        }
+    })();
+</script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,8 +27,9 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html" class="active-page">Contact</a></li>
             </ul>
         </nav>
@@ -25,42 +39,79 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xanygorp" method="POST">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
-                    <span class="error-message">Please enter your name</span>
+            <div class="contact-wrapper">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div class="info-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:your.email@example.com">mmik70999@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div class="info-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+1234567890">0963</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-details">
+                            <h4>Address</h4>
+                            <p>San Jose,<br>
+                            Talisay, Camarines Norte<br>
+                           Philippines, 4602</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                    <span class="error-message">Please enter a valid email</span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required>
-                    <span class="error-message">Please enter a subject</span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <span class="error-message">Please enter your message</span>
-                </div>
-                
-                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Send Message</button>
-            </form>
+
+                <!-- Contact Form -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xanygorp" method="POST">
+                    <h3>Send Me a Message</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message">Please enter your name</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message">Please enter a valid email</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                        <span class="error-message">Please enter a subject</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <span class="error-message">Please enter your message</span>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Send Message</button>
+                </form>
+            </div>
         </div>
     </main>
 
     <button class="theme-switcher" id="themeToggle" title="Toggle Dark Mode">🌙</button>
 
-    <footer>
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-        <p>Built with HTML, CSS, and JavaScript</p>
+   <footer>
+        <p>&copy; 2025 Sevilla, Joana Mikaela R..</p>
+
     </footer>
+
 
     <script src="script.js"></script>
 </body>

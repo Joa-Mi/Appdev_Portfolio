@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio showcasing projects, skills, and experience in web development and technology">
-    <title>My Portfolio - Home</title>
-    <script>
+    <meta name="description" content="Explore my technical skills and expertise in web development">
+     <link rel="stylesheet" href="styles.css">
+     <script>
     (async function() {
         try {
             const result = await window.storage.get('theme');
@@ -18,53 +18,56 @@
         }
     })();
 </script>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Portfolio - Skills</title>
+    <style>
+     
+     
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">My Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active-page">Home</a></li>
+                <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                 <li><a href="skills.html">Skills</a></li>
+                 <li><a href="skills.html" class="active-page">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                   <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="images/joana.png" alt="JoJo Mikaela" class="profile-image">
-                </div>
-                <div class="hero-text">
-                    <h1>Joana Mikaela R. Sevilla</h1>
-                    <a href="about.html" class="btn">Learn More About Me</a>
-                </div>
-            </div>
-        </section>
         <div class="container">
-            <div class="datetime-display">
-                <h3>Current Date & Time</h3>
-                <p id="datetime"></p>
+            <h2 class="section-title">My Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Frontend Development</h3>
+                
+                </div>
+                <div class="skill-item">
+                    <h3>Backend Development</h3>
+                    <p></p>
+                </div>
+                <div class="skill-item">
+                    <h3>Tools&Technologies</h3>
+                    <p></p>
+                </div>
             </div>
-
-        
+        </div>
     </main>
 
     <button class="theme-switcher" id="themeToggle" title="Toggle Dark Mode">🌙</button>
 
-    <footer>
+   <footer>
         <p>&copy; 2025 Sevilla, Joana Mikaela R..</p>
 
     </footer>
 
-
-    <script src="script.js"></script>
+   <script src="script.js"></script>
+  
 </body>
 </html>

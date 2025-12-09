@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="View my portfolio of web development projects and applications">
     <title>My Portfolio - Projects</title>
+   <script>
+    (async function() {
+        try {
+            const result = await window.storage.get('theme');
+            const savedTheme = result ? result.value : 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+        } catch (error) {
+            // Default to light theme
+        }
+    })();
+</script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,8 +27,9 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
                 <li><a href="projects.html" class="active-page">Projects</a></li>
-                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -27,38 +41,54 @@
             
             <div class="gallery-grid">
                 <div class="project-card">
-                    <div class="project-image">🌐</div>
+                    <img src="images/tabeya_project1.png" alt="Tabeya Website" class="project-image">
                     <div class="project-content">
-                        <h3>Portfolio Website</h3>
-                        <p>A responsive portfolio showcasing my work and skills using modern web technologies.</p>
-                        <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+                        <h3>Tabeya Website</h3>
+                        <p>In my first year we created a static website for a small restaurant.</p>
+                        <p>HTML, CSS, JavaScript</p>
                     </div>
                 </div>
                 
-                <div class="project-card">
-                    <div class="project-image">📝</div>
-                    <div class="project-content">
-                        <h3>Task Manager App</h3>
-                        <p>An interactive task management application with local storage capabilities.</p>
-                        <p><strong>Technologies:</strong> JavaScript, CSS Grid</p>
-                    </div>
-                </div>
                 
                 <div class="project-card">
-                    <div class="project-image">🎮</div>
+                    <img src="" alt="Tabeya Restaurant Management Sytem" class="project-image">
                     <div class="project-content">
-                        <h3>Mini Game Project</h3>
+                        <h3>Tabeya Restaurant Management Sytem</h3>
                         <p>A browser-based game demonstrating JavaScript logic and DOM manipulation.</p>
-                        <p><strong>Technologies:</strong> HTML Canvas, JavaScript</p>
+                        <p><strong>Technologies:</strong> Vb.net, Html, CSS, JavaScript</p>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-image">📊</div>
+                    <img src="images/data_viz.jpg" alt="Mobile Application" class="project-image">
                     <div class="project-content">
-                        <h3>Data Visualization</h3>
+                        <h3>Lost and Found Item Mobile Application</h3>
                         <p>Interactive charts and graphs to represent data in meaningful ways.</p>
-                        <p><strong>Technologies:</strong> JavaScript, CSS Animations</p>
+                        <p><strong>Technologies:</strong>Android</p>
+                    </div>
+                </div>
+                 <div class="project-card">
+                    <img src="" alt="Game Map" class="project-image">
+                    <div class="project-content">
+                        <h3>Game Map</h3>
+                        <p>Interactive charts and graphs to represent data in meaningful ways.</p>
+                        <p>Java</p>
+                    </div>
+                </div>
+                 <div class="project-card">
+                    <img src="" alt="File Management" class="project-image">
+                    <div class="project-content">
+                        <h3>File Management</h3>
+                        <p></p>
+                        <p>Java</p>
+                    </div>
+                </div>
+                  <div class="project-card">
+                    <img src="" alt="Motor Queue System" class="project-image">
+                    <div class="project-content">
+                        <h3>Motor Queue System</h3>
+                        <p></p>
+                        <p>Java</p>
                     </div>
                 </div>
             </div>
@@ -67,10 +97,11 @@
 
     <button class="theme-switcher" id="themeToggle" title="Toggle Dark Mode">🌙</button>
 
-    <footer>
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-        <p>Built with HTML, CSS, and JavaScript</p>
+   <footer>
+        <p>&copy; 2025 Sevilla, Joana Mikaela R..</p>
+
     </footer>
+
 
     <script src="script.js"></script>
 </body>
