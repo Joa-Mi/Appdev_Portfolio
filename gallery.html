@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore my photo gallery showcasing projects, events, and moments">
+    <title>My Portfolio - Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html" class="active-page">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 class="section-title">My Gallery</h2>
+            <p class="gallery-description">A collection of moments, projects, and experiences from my journey in IT</p>
+
+            <!-- Filter Buttons -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="projects">Projects</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="learning">Learning</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-category="learning">
+                    <img src="images/cutie.jpg" alt="Coding session">
+                    <div class="gallery-overlay">
+                        <h3>Coding Session</h3>
+                        <p>Working on web development</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" data-category="projects">
+                    <img src="images/cute.jpg" alt="Project screenshot">
+                    <div class="gallery-overlay">
+                        <h3>Web Project</h3>
+                        <p>Portfolio website development</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" data-category="events">
+                    <img src="" alt="Tech event">
+                    <div class="gallery-overlay">
+                        <h3>Tech Workshop</h3>
+                        <p>Attending coding bootcamp</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" data-category="learning">
+                    <img src="" alt="Study session">
+                    <div class="gallery-overlay">
+                        <h3>Study Time</h3>
+                        <p>Learning new technologies</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" data-category="projects">
+                    <img src="" alt="App design">
+                    <div class="gallery-overlay">
+                        <h3>UI Design</h3>
+                        <p>Mobile app interface</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" data-category="events">
+                    <img src="" alt="Group project">
+                    <div class="gallery-overlay">
+                        <h3>Team Collaboration</h3>
+                        <p>Working with classmates</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item" data-category="learning">
+                    <img src="" alt="Computer lab">
+                    <div class="gallery-overlay">
+                        <h3>Lab Work</h3>
+                        <p>Computer laboratory session</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item" data-category="projects">
+                    <img src="" alt="Code editor">
+                    <div class="gallery-overlay">
+                        <h3>Development</h3>
+                        <p>Building applications</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item" data-category="events">
+                    <img src="" alt="Presentation">
+                    <div class="gallery-overlay">
+                        <h3>Project Presentation</h3>
+                        <p>Showcasing final project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <button class="theme-switcher" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        <p>Built with HTML, CSS, and JavaScript</p>
+    </footer>
+
+    <script src="gallery.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

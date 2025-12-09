@@ -73,9 +73,27 @@ nav {
     text-align: center;
 }
 
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-image {
+    width: 250px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s ease;
+}
+
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     animation: fadeInDown 1s ease;
 }
 
@@ -193,14 +211,33 @@ footer {
 .dark-theme footer {
     background-color: #111827;
 }
-
 /* About Page Styles */
+.about-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.about-image {
+    flex: 0 0 300px;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+}
+
 .about-content {
     background: var(--white);
     padding: 3rem;
     border-radius: 10px;
     box-shadow: var(--shadow);
     margin-bottom: 2rem;
+    flex: 1;
 }
 
 .about-content h2 {
@@ -249,6 +286,19 @@ footer {
     margin-bottom: 0.5rem;
 }
 
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .about-layout {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
 /* Projects Page Styles */
 .gallery-grid {
     display: grid;
@@ -394,5 +444,10 @@ footer {
     .about-content,
     .contact-form {
         padding: 1.5rem;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
     }
 }

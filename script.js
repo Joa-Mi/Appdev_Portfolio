@@ -34,15 +34,16 @@ if (themeToggle) {
     });
 }
 
-// Form Validation
+// Form Validation and Submission
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         let isValid = true;
         const formGroups = contactForm.querySelectorAll('.form-group');
         
+        // Validate all fields
         formGroups.forEach(group => {
             const input = group.querySelector('input, textarea');
             group.classList.remove('error');
@@ -62,8 +63,28 @@ if (contactForm) {
         });
         
         if (isValid) {
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            try {
+                // Submit to Formspree
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Thank you for your message! I will get back to you soon at mmik709999@gmail.com');
+                    contactForm.reset();
+                } else {
+                    alert('Oops! There was a problem sending your message. Please try again or email me directly at mmik709999@gmail.com');
+                }
+            } catch (error) {
+                alert('There was an error sending your message. Please email me directly at mmik709999@gmail.com');
+            }
         }
     });
 }
