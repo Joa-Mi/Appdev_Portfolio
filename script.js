@@ -30,31 +30,42 @@ if (themeToggle) {
         try {
             const result = await window.storage.get('theme');
             const savedTheme = result ? result.value : 'light';
-            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            const isDark = savedTheme === 'dark';
+
+            // Sync DOM
+            if (isDark && !document.documentElement.classList.contains('dark-theme')) {
+                document.documentElement.classList.add('dark-theme');
+            } else if (!isDark && document.documentElement.classList.contains('dark-theme')) {
+                document.documentElement.classList.remove('dark-theme');
+            }
+
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
         } catch (error) {
             themeToggle.textContent = '🌙';
         }
     }
-    
+
+    // Initial check
     updateButtonIcon();
 
+    // Poll for changes (Sync across tabs)
+    setInterval(updateButtonIcon, 1000);
+
     themeToggle.addEventListener('click', async () => {
+        const isDarkNow = document.documentElement.classList.contains('dark-theme');
+        const newTheme = isDarkNow ? 'light' : 'dark'; // Toggle
+
+        // Optimistic update
         document.documentElement.classList.toggle('dark-theme');
-        
-        if (document.documentElement.classList.contains('dark-theme')) {
-            themeToggle.textContent = '☀️';
-            try {
-                await window.storage.set('theme', 'dark');
-            } catch (error) {
-                console.error('Failed to save theme:', error);
-            }
-        } else {
-            themeToggle.textContent = '🌙';
-            try {
-                await window.storage.set('theme', 'light');
-            } catch (error) {
-                console.error('Failed to save theme:', error);
-            }
+        themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+
+        try {
+            await window.storage.set('theme', newTheme);
+        } catch (error) {
+            console.error('Failed to save theme:', error);
+            // Revert if failed
+            document.documentElement.classList.toggle('dark-theme');
+            themeToggle.textContent = isDarkNow ? '☀️' : '🌙';
         }
     });
 }
@@ -64,20 +75,20 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         let isValid = true;
         const formGroups = contactForm.querySelectorAll('.form-group');
-        
+
         // Validate all fields
         formGroups.forEach(group => {
             const input = group.querySelector('input, textarea');
             group.classList.remove('error');
-            
+
             if (!input.value.trim()) {
                 group.classList.add('error');
                 isValid = false;
             }
-            
+
             if (input.type === 'email' && input.value.trim()) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(input.value)) {
@@ -86,11 +97,11 @@ if (contactForm) {
                 }
             }
         });
-        
+
         if (isValid) {
             // Get form data
             const formData = new FormData(contactForm);
-            
+
             try {
                 // Submit to Formspree
                 const response = await fetch(contactForm.action, {
@@ -100,7 +111,7 @@ if (contactForm) {
                         'Accept': 'application/json'
                     }
                 });
-                
+
                 if (response.ok) {
                     alert('Thank you for your message! I will get back to you soon at mmik709999@gmail.com');
                     contactForm.reset();

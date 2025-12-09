@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="View my portfolio of web development projects and applications">
     <title>My Portfolio - Projects</title>
-   <script>
-    (async function() {
-        try {
-            const result = await window.storage.get('theme');
-            const savedTheme = result ? result.value : 'light';
-            if (savedTheme === 'dark') {
-                document.documentElement.classList.add('dark-theme');
+    <script>
+        (async function () {
+            try {
+                const result = await window.storage.get('theme');
+                const savedTheme = result ? result.value : 'light';
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch (error) {
+                // Default to light theme
             }
-        } catch (error) {
-            // Default to light theme
-        }
-    })();
-</script>
+        })();
+    </script>
     <link rel="stylesheet" href="css/project.css">
-     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -37,72 +39,207 @@
     </header>
 
     <main>
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            
-            <div class="gallery-grid">
-                <div class="project-card">
-                    <img src="images/tabeya_project1.png" alt="Tabeya Website" class="project-image">
-                    <div class="project-content">
-                        <h3>Tabeya Website</h3>
-                        <p>In my first year we created a static website for a small restaurant.</p>
-                        <p>HTML, CSS, JavaScript</p>
-                    </div>
+        <h2 class="section-title">My Projects</h2>
+        <div class="header-line"></div>
+        <p class="section-subtitle">A collection of my work showcasing web development, mobile applications, and
+            collaborative projects</p>
+
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="individual">Individual</button>
+            <button class="filter-btn" data-filter="groups">Group</button>
+        </div>
+
+        <div class="projects-container">
+            <div class="project-card" data-category="groups">
+                <div class="card-image">
+                    <img src="images/tabeya_project1.png" alt="Tabeya Website"
+                        onerror="this.src='https://via.placeholder.com/400x200?text=Project+Image'">
+                    <span class="project-label label-group">Group</span>
                 </div>
-                
-                
-                <div class="project-card">
-                    <img src="" alt="Tabeya Restaurant Management Sytem" class="project-image">
-                    <div class="project-content">
-                        <h3>Tabeya Restaurant Management Sytem</h3>
-                        <p>A browser-based game demonstrating JavaScript logic and DOM manipulation.</p>
-                        <p><strong>Technologies:</strong> Vb.net, Html, CSS, JavaScript</p>
+                <div class="card-content">
+                    <h3>Tabeya Website</h3>
+                    <p>In my first year we created a static website for a small restaurant. HTML, CSS, JavaScript</p>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
                     </div>
+
+                    <a href="#" class="github-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        View on GitHub
+                    </a>
                 </div>
-                
-                <div class="project-card">
-                    <img src="images/data_viz.jpg" alt="Mobile Application" class="project-image">
-                    <div class="project-content">
-                        <h3>Lost and Found Item Mobile Application</h3>
-                        <p>Interactive charts and graphs to represent data in meaningful ways.</p>
-                        <p><strong>Technologies:</strong>Android</p>
-                    </div>
+            </div>
+
+            <!-- Project 2: Tabeya System -->
+            <div class="project-card" data-category="groups">
+                <div class="card-image">
+                    <img src="images/tabeya_project2.png" alt="Tabeya Restaurant Management System"
+                        onerror="this.src='https://via.placeholder.com/400x200?text=Project+Image'">
+                    <span class="project-label label-group">Group</span>
                 </div>
-                 <div class="project-card">
-                    <img src="" alt="Game Map" class="project-image">
-                    <div class="project-content">
-                        <h3>Game Map</h3>
-                        <p>Interactive charts and graphs to represent data in meaningful ways.</p>
-                        <p>Java</p>
+                <div class="card-content">
+                    <h3>Tabeya Restaurant Management System</h3>
+                    <p>A browser-based game demonstrating JavaScript logic and DOM manipulation.</p>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
                     </div>
+
+                    <a href="#" class="github-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        View on GitHub
+                    </a>
                 </div>
-                 <div class="project-card">
-                    <img src="" alt="File Management" class="project-image">
-                    <div class="project-content">
-                        <h3>File Management</h3>
-                        <p></p>
-                        <p>Java</p>
-                    </div>
+            </div>
+
+            <!-- Project 3: Mobile App -->
+            <div class="project-card" data-category="groups">
+                <div class="card-image">
+                    <img src="" alt="Lost and Found Item Mobile Application"
+                        onerror="this.src='https://via.placeholder.com/400x200?text=Project+Image'">
+                    <span class="project-label label-groups">Groups</span>
                 </div>
-                  <div class="project-card">
-                    <img src="" alt="Motor Queue System" class="project-image">
-                    <div class="project-content">
-                        <h3>Motor Queue System</h3>
-                        <p></p>
-                        <p>Java</p>
+                <div class="card-content">
+                    <h3>Lost and Found Item Mobile Application</h3>
+                    <p>Interactive charts and graphs to represent data in meaningful ways.</p>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">TypeScript</span>
                     </div>
+
+                    <a href="#" class="github-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4: Game Map -->
+            <div class="project-card" data-category="groups">
+                <div class="card-image">
+                    <img src="" alt="Game Map"
+                        onerror="this.src='https://via.placeholder.com/400x200?text=Project+Image'">
+                    <span class="project-label label-groups">Groups</span>
+                </div>
+                <div class="card-content">
+                    <h3>Game Map</h3>
+                    <p>Interactive game map with dynamic features and navigation.</p>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                    </div>
+
+                    <a href="#" class="github-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 5: File Management -->
+            <div class="project-card" data-category="individual">
+                <div class="card-image">
+                    <img src="" alt="File Management"
+                        onerror="this.src='https://via.placeholder.com/400x200?text=Project+Image'">
+                    <span class="project-label label-individual">Individual</span>
+                </div>
+                <div class="card-content">
+                    <h3>File Management</h3>
+                    <p>Efficient file organization and management system.</p>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                    </div>
+
+                    <a href="#" class="github-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 6: Motor Queue -->
+            <div class="project-card" data-category="individual">
+                <div class="card-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                    <span class="project-label label-individual">Individual</span>
+                    <div class="placeholder">🚗</div>
+                </div>
+                <div class="card-content">
+                    <h3>Motor Queue System</h3>
+                    <p>Queue management system for motor vehicle services.</p>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                    </div>
+
+                    <a href="#" class="github-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        View on GitHub
+                    </a>
                 </div>
             </div>
         </div>
+        </div>
     </main>
 
-
-   <footer>
-        <p>&copy; 2025 Sevilla, Joana Mikaela R..</p>
-
+    <footer>
+        <p>&copy; 2025 Sevilla, Joana Mikaela R.</p>
     </footer>
 
-
     <script src="script.js"></script>
+    <script>
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter project cards
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+
+            });
+        });
+    </script>
 </body>
+
 </html>

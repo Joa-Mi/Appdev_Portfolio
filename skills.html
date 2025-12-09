@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore my technical skills and expertise in web development">
-     <link rel="stylesheet" href="css/skills.css">
-     <link rel="stylesheet" href="css/styles.css">
-     <script>
-    (async function() {
-        try {
-            const result = await window.storage.get('theme');
-            const savedTheme = result ? result.value : 'light';
-            if (savedTheme === 'dark') {
-                document.documentElement.classList.add('dark-theme');
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        (async function () {
+            try {
+                const result = await window.storage.get('theme');
+                const savedTheme = result ? result.value : 'light';
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch (error) {
+                // Default to light theme
             }
-        } catch (error) {
-            // Default to light theme
-        }
-    })();
-</script>
+        })();
+    </script>
     <title>My Portfolio - Skills</title>
     <style>
-     
-     
+
+
     </style>
 </head>
+
 <body>
     <header>
         <nav>
             <div class="logo">My Portfolio</div>
-                <ul class="nav-links">
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                 <li><a href="skills.html" class="active-page">Skills</a></li>
+                <li><a href="skills.html" class="active-page">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><button class="theme-switcher" id="themeToggle" title="Toggle Dark Mode">🌙</button></li>
@@ -43,31 +45,85 @@
     <main>
         <div class="container">
             <h2 class="section-title">My Skills</h2>
-            
+            <div class="header-line"></div>
+            <p class="section-subtitle">Technologies and tools I work with</p>
+
             <div class="skills-grid">
-                <div class="skill-item">
-                    <h3>Frontend Development</h3>
-                
+                <!-- React -->
+                <div class="skill-card">
+                    <div class="skill-icon-container">
+                        <span class="skill-icon">&lt;/&gt;</span>
+                    </div>
+                    <h3>Figma</h3>
                 </div>
-                <div class="skill-item">
-                    <h3>Backend Development</h3>
-                    <p></p>
+
+                <!-- TypeScript -->
+                <div class="skill-card">
+                    <div class="skill-icon-container">
+                        <span class="skill-icon">&lt;&gt;</span>
+                    </div>
+                    <h3>TypeScript</h3>
                 </div>
-                <div class="skill-item">
-                    <h3>Tools&Technologies</h3>
-                    <p></p>
+
+                <!-- Node.js -->
+                <div class="skill-card">
+                    <div class="skill-icon-container">
+                        <span class="skill-icon">🗄️</span>
+                    </div>
+                    <h3>Node.js</h3>
+                </div>
+
+                <!-- MongoDB -->
+                <div class="skill-card">
+                    <div class="skill-icon-container">
+                        <span class="skill-icon">🍃</span>
+                    </div>
+                    <h3>MongoDB</h3>
+                </div>
+
+                <!-- PostgreSQL -->
+                <div class="skill-card">
+                    <div class="skill-icon-container">
+                        <span class="skill-icon">🐘</span>
+                    </div>
+                    <h3>PostgreSQL</h3>
+                </div>
+
+                <!-- React Native -->
+                <div class="skill-card">
+                    <div class="skill-icon-container">
+                        <span class="skill-icon">📱</span>
+                    </div>
+                    <h3>React Native</h3>
+                </div>
+
+                <!-- Tailwind CSS -->
+                <div class="skill-card">
+                    <div class="skill-icon-container">
+                        <span class="skill-icon">🎨</span>
+                    </div>
+                    <h3>Tailwind CSS</h3>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="skill-card">
+                    <div class="skill-icon-container">
+                        <span class="skill-icon">🧠</span>
+                    </div>
+                    <h3>Machine Learning</h3>
                 </div>
             </div>
         </div>
     </main>
 
 
-   <footer>
+    <footer>
         <p>&copy; 2025 Sevilla, Joana Mikaela R..</p>
 
     </footer>
 
-   <script src="script.js"></script>
-  
+    <script src="script.js"></script>
+
 </body>
+
 </html>

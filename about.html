@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn more about my background, education, and skills in web development and technology">
+    <meta name="description"
+        content="Learn more about my background, education, and skills in web development and technology">
     <title>My Portfolio - About</title>
-  <script>
-    (async function() {
-        try {
-            const result = await window.storage.get('theme');
-            const savedTheme = result ? result.value : 'light';
-            if (savedTheme === 'dark') {
-                document.documentElement.classList.add('dark-theme');
+    <script>
+        (async function () {
+            try {
+                const result = await window.storage.get('theme');
+                const savedTheme = result ? result.value : 'light';
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch (error) {
+                // Default to light theme
             }
-        } catch (error) {
-            // Default to light theme
-        }
-    })();
-</script>
+        })();
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/about.css">
-     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -39,42 +42,95 @@
     <main>
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            
-            <div class="about-layout">
-                <div class="about-image">
-                    <img src="images/myimage.jpg" alt="Profile picture" class="profile-img">
-                </div>
-                
-                <div class="about-content">
-                    <h2>Hello! I'm an IT Student</h2>
-                    <p>I'm currently pursuing my degree in Information Technology at Camarines Norte State College. My journey in tech has been driven by curiosity and a desire to create innovative solutions through code.</p>
-                    <p>I specialize in front-end web development and have a strong foundation in modern web technologies. I'm constantly learning and exploring new frameworks and tools to enhance my skillset.</p>
-                </div>
-            </div>
+            <div class="header-line"></div>
 
-            <div class="about-content">
-                <h2>Education</h2>
-                <table>
-                    <tr>
-                        <th>Degree</th>
-                        <th>Institution</th>
-                        <th>Year</th>
-                    </tr>
-                    <tr>
-                        <td>Bachelor of Science in Information Technology</td>
-                        <td>Camarines Norte State College</td>
-                        <td>2023 - Present</td>
-                    </tr>
-                </table>
+            <div class="about-grid">
+                <!-- Left Side (Empty/Image placeholder if needed, but per design image is implied or maybe hidden effectively? 
+                     Actually looking at the screenshot, the "About Me" is centered at top, 
+                     then "Dedicated Developer..." is right aligned relative to a big empty space or image.
+                     Wait, looking closer at the screenshot:
+                     There is a "About me" label on the far left with a small leaf/flower image.
+                     The main text is pushed to the right side.
+                     
+                     Let's check the current about.html. It has an image on left.
+                     The user screenshot shows:
+                     Left: White space + "About me" text with small graphic? Or is that just a watermark?
+                     Right: Content.
+                     
+                     Actually, re-reading the screenshot 1:
+                     Top center: "About Me" with underline.
+                     Content is split.
+                     Left: Empty? Or maybe the image is missing?
+                     Ah, the user provided `uploaded_image_0` which looks like a screenshot of the about page.
+                     It shows "About Me" title.
+                     Then a large area.
+                     Left side has a small "About me" text with a flower.
+                     Right side calculates "Dedicated Developer & Problem Solver" and text, and then the grid.
+                     
+                     I will try to keep the `about-image` div but maybe it needs to be adjusted or the user wants the specific layout.
+                     
+                     Let's stick to the plan: layout 2 column.
+                     Left: Image (I'll keep the existing image placeholder).
+                     Right: Text content + Skills Grid.
+                -->
+
+                <div class="about-image-container">
+                    <!-- Keeping existing image or placeholder -->
+                    <img src="images/myimage.jpg" alt="About Visual" class="about-decoration"
+                        onerror="this.onerror=null;this.src='images/myimage.png';">
+                    <!-- If they want the specific 'flower' design, I can't generate it, but I can structure it.
+                          Usage of `joana.png` as fallback. -->
+                </div>
+
+                <div class="about-text-content">
+                    <h3>Dedicated Developer & Problem Solver</h3>
+                    <p>I'm a passionate full-stack developer with a strong foundation in both frontend and backend
+                        technologies. My journey in web development started during my first year in college, and since
+                        then, I've been constantly learning and growing.</p>
+
+                    <p>I thrive in collaborative environments and enjoy working on challenging projects that push me to
+                        learn new technologies. Whether it's building responsive web applications or developing mobile
+                        solutions, I approach each project with dedication and attention to detail.</p>
+
+                    <div class="education-section">
+                        <div class="education-header">
+                            <span class="icon">🎓</span>
+                            <h3>Education</h3>
+                        </div>
+
+                        <div class="education-card">
+                            <div class="education-top-row">
+                                <h4 class="degree">Bachelor of Science in Computer Science</h4>
+                                <span class="year-badge">📅 2021 - 2025</span>
+                            </div>
+                            <p class="university">Camarines Norte State College</p>
+                            <p class="education-desc">Focused on software development, data structures, and mobile
+                                application development</p>
+                        </div>
+                    </div>
+
+                    <div class="coursework-section">
+                        <div class="education-header">
+                            <span class="icon">🔖</span>
+                            <h3>Relevant Coursework</h3>
+                        </div>
+                        <div class="coursework-tags">
+                            <span class="course-tag">Web Development</span>
+                            <span class="course-tag">Mobile Apps</span>
+                            <span class="course-tag">Database Systems</span>
+                            <span class="course-tag">Algorithms</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2025 Sevilla, Joana Mikaela R..</p>
-
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
