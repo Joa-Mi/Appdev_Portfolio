@@ -1,0 +1,250 @@
+/* Prevent white flash on page load - MUST BE FIRST */
+html.dark-theme {
+    background-color: #4a4a4a !important;
+}
+
+html.dark-theme body {
+    background-color: #4a4a4a !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #ffffff;
+    --accent-color: #ffffff;
+    --text-color: #6b6b6b;
+    --light-bg: #ffffff;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+/* Header & Navigation */
+header {
+    background: var(--white);
+    color: var(--text-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #8b8b8b;
+}
+
+.active-page {
+    border-bottom: 2px solid var(--text-color);
+}
+
+/* Theme Switcher - Now in navigation */
+.theme-switcher {
+    background-color: var(--text-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-left: 1rem;
+}
+
+.theme-switcher:hover {
+    transform: scale(1.1);
+    background-color: #8b8b8b;
+}
+
+/* Main Layout */
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    min-height: calc(100vh - 250px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--white);
+    color: var(--text-color);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Common Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--text-color);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #8b8b8b;
+}
+
+/* Dark Theme - Gray Mode */
+.dark-theme {
+    --light-bg: #4a4a4a;
+    --white: #5a5a5a;
+    --text-color: #e5e5e5;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme body {
+    background-color: #4a4a4a;
+}
+
+.dark-theme header {
+    background-color: #5a5a5a;
+}
+
+.dark-theme footer {
+    background-color: #3a3a3a;
+    border-top: 1px solid #5a5a5a;
+}
+
+.dark-theme .container {
+    background-color: #5a5a5a;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .theme-switcher {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-switcher {
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem;
+    }
+}

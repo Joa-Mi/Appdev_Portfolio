@@ -1,0 +1,104 @@
+/* Home Page Specific Styles */
+
+.hero {
+    background: transparent;
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text {
+    animation: fadeInRight 1s ease;
+    font: Bebas Neue;
+    font-size: 20px;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInLeft 1s ease;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    animation: fadeInRight 1s ease;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+    color: var(--text-color);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease;
+    color: var(--text-color);
+}
+
+.datetime-display {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 400px;
+    box-shadow: var(--shadow);
+    color: var(--text-color);
+}
+
+/* Dark Theme for Home */
+.dark-theme .hero {
+    background-color: transparent;
+}
+
+.dark-theme .datetime-display {
+    background-color: #5a5a5a;
+}
+
+.dark-theme .profile-image {
+    border-color: #6a6a6a;
+}
+
+/* Responsive Design for Home */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .profile-image {
+        max-width: 300px;
+    }
+}
