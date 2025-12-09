@@ -7,6 +7,17 @@
     <meta name="description"
         content="Professional portfolio showcasing projects, skills, and experience in web development and technology">
     <title>My Portfolio - Home</title>
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch (e) { }
+        })();
+    </script>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>

@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="View my portfolio of web development projects and applications">
     <title>My Portfolio - Projects</title>
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch (e) { }
+        })();
+    </script>
     <link rel="stylesheet" href="css/project.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -73,7 +83,11 @@
                 </div>
                 <div class="card-content">
                     <h3>Tabeya Restaurant Management System</h3>
-                    <p>A browser-based game demonstrating JavaScript logic and DOM manipulation.</p>
+                    <p>
+                        A web-based restaurant management system featuring a POS interface and an admin dashboard.
+                        Built using PHP, MySQL (XAMPP), and JavaScript to handle orders, inventory, and overall
+                        restaurant operations.
+                    </p>
 
                     <div class="tech-tags">
                         <span class="tech-tag">HTML</span>
@@ -102,8 +116,11 @@
                 </div>
                 <div class="card-content">
                     <h3>Lost and Found Item Mobile Application</h3>
-                    <p>Interactive charts and graphs to represent data in meaningful ways.</p>
-
+                    <p>
+                        A mobile application developed for Camarines Norte School that helps students report, find, and
+                        track lost items.
+                        Built using Android and Firebase for real-time data storage and user management.
+                    </p>
                     <div class="tech-tags">
                         <span class="tech-tag">Android</span>
                         <span class="tech-tag">Firebase</span>

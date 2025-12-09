@@ -7,6 +7,16 @@
     <meta name="description"
         content="Learn more about my background, education, and skills in web development and technology">
     <title>My Portfolio - About</title>
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch (e) { }
+        })();
+    </script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/about.css">
 </head>
@@ -70,46 +80,50 @@
                 </div>
 
                 <div class="about-text-content">
-                    <h3>Dedicated Developer & Problem Solver</h3>
-                    <p>I'm a passionate full-stack developer with a strong foundation in both frontend and backend
-                        technologies. My journey in web development started during my first year in college, and since
-                        then, I've been constantly learning and growing.</p>
+                    <h3>IT Student & Aspiring Developer</h3>
+                    <p>I’m currently an IT student who is still learning and building my skills in web development and
+                        programming. My journey started in college, and ever since, I’ve been exploring different
+                        technologies to understand how real-world systems and applications are built.</p>
 
-                    <p>I thrive in collaborative environments and enjoy working on challenging projects that push me to
-                        learn new technologies. Whether it's building responsive web applications or developing mobile
-                        solutions, I approach each project with dedication and attention to detail.</p>
+                    <p>Even though I’m still gaining experience, I enjoy solving problems, creating small projects, and
+                        improving step by step. I’m committed to learning, growing, and becoming a skilled developer in
+                        the future through practice and continuous learning.</p>
+                </div>
 
-                    <div class="education-section">
-                        <div class="education-header">
-                            <span class="icon">🎓</span>
-                            <h3>Education</h3>
-                        </div>
-
-                        <div class="education-card">
-                            <div class="education-top-row">
-                                <h4 class="degree">Bachelor of Science in Information Technology</h4>
-                                <span class="year-badge">📅 2021 - 2025</span>
-                            </div>
-                            <p class="university">Camarines Norte State College</p>
-                            <p class="education-desc">Focused on software development, data structures, and mobile
-                                application development</p>
-                        </div>
+                <div class="education-section">
+                    <div class="education-header">
+                        <span class="icon">🎓</span>
+                        <h3>Education</h3>
                     </div>
 
-                    <div class="coursework-section">
-                        <div class="education-header">
-                            <span class="icon">🔖</span>
-                            <h3>Relevant Coursework</h3>
+                    <div class="education-card">
+                        <div class="education-top-row">
+                            <h4 class="degree">Bachelor of Science in Information Technology</h4>
+                            <span class="year-badge">📅 2021 - 2025</span>
                         </div>
-                        <div class="coursework-tags">
-                            <span class="course-tag">Web Development</span>
-                            <span class="course-tag">Mobile Apps</span>
-                            <span class="course-tag">Database Systems</span>
-                            <span class="course-tag">Algorithms</span>
-                        </div>
+                        <p class="university">Camarines Norte State College</p>
+                        <p class="education-desc">
+                            Learning frontend development and UI design, focusing on creating simple and responsive
+                            websites.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="coursework-section">
+                    <div class="education-header">
+                        <span class="icon">🔖</span>
+                        <h3>Relevant Coursework</h3>
+                    </div>
+                    <div class="coursework-tags">
+                        <span class="course-tag">Web Development</span>
+                        <span class="course-tag">Mobile Apps</span>
+                        <span class="course-tag">Database Systems</span>
+                        <span class="course-tag">Algorithms</span>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </main>
 

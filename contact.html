@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get in touch with me for web development projects and collaborations">
     <title>My Portfolio - Contact</title>
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch (e) { }
+        })();
+    </script>
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
