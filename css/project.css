@@ -98,18 +98,20 @@
         .filter-tabs {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
+            gap: 0.8rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
         }
 
         .filter-btn {
-            padding: 0.6rem 1.5rem;
-            border: none;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid #ddd;
+            background-color: transparent;
             border-radius: 25px;
-            background-color: #f0f0f0;
-            color: var(--text-color);
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-color);
             transition: all 0.3s ease;
         }
 
@@ -118,8 +120,9 @@
         }
 
         .filter-btn.active {
-            background-color: #1a1a1a;
+            background-color: #333333;
             color: #ffffff;
+            border-color: #333333;
         }
 
         .projects-container {

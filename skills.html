@@ -45,58 +45,86 @@
         <div class="header-line"></div>
         <p class="section-subtitle">Technologies and tools I work with</p>
 
-        <div class="skills-grid">
-            <!-- Java -->
-            <div class="skill-card">
-                <div class="skill-icon-container">
-                    <span class="skill-icon">&lt;&gt;</span>
-                </div>
-                <h3>Java</h3>
-            </div>
-
-            <!-- HTML -->
-            <div class="skill-card">
-                <div class="skill-icon-container">
-                    <span class="skill-icon">&lt;&gt;</span>
-                </div>
-                <h3>HTML</h3>
-            </div>
-
-            <!-- CSS -->
-            <div class="skill-card">
-                <div class="skill-icon-container">
-                    <span class="skill-icon">🎨</span>
-                </div>
-                <h3>CSS</h3>
-            </div>
-
-            <!-- JavaScript -->
-            <div class="skill-card">
-                <div class="skill-icon-container">
-                    <span class="skill-icon">&lt;&gt;</span>
-                </div>
-                <h3>JavaScript</h3>
-            </div>
-
-            <!-- Android -->
-            <div class="skill-card">
-                <div class="skill-icon-container">
-                    <span class="skill-icon">📱</span>
-                </div>
-                <h3>Android</h3>
-            </div>
-
-            <!-- Figma -->
-            <div class="skill-card">
-                <div class="skill-icon-container">
-                    <span class="skill-icon">🎨</span>
-                </div>
-                <h3>Figma</h3>
-            </div>
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="programming">Programming</button>
+            <button class="filter-btn" data-filter="tools">Tools</button>
+            <button class="filter-btn" data-filter="soft">Soft Skills</button>
         </div>
+
+        <div class="skills-container">
+            <!-- Programming & Web -->
+            <div class="skill-card" data-category="programming">
+                <h4>HTML5</h4>
+                <p>Page structure</p>
+            </div>
+            <div class="skill-card" data-category="programming">
+                <h4>CSS3</h4>
+                <p>Layout, Flexbox, Responsive</p>
+            </div>
+            <div class="skill-card" data-category="programming">
+                <h4>JavaScript</h4>
+                <p>DOM, Events (Basic)</p>
+            </div>
+            <div class="skill-card" data-category="programming">
+                <h4>VB.NET</h4>
+                <p>Windows Forms</p>
+            </div>
+            <div class="skill-card" data-category="programming">
+                <h4>SQL / MySQL</h4>
+                <p>SELECT, INSERT, JOIN</p>
+            </div>
+
+
+            <!-- Tools & Technologies -->
+            <div class="skill-card" data-category="tools">
+                <h4>Visual Studio</h4>
+                <p>IDE for .NET</p>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <h4>VS Code</h4>
+                <p>Code editor</p>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <h4>Git & GitHub</h4>
+                <p>Version control</p>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <h4>Figma</h4>
+                <p>UI/UX design</p>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <h4>XAMPP</h4>
+                <p>Localhost setup</p>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <h4>MySQL Workbench</h4>
+                <p>Database management</p>
+            </div>
+
+
+            <!-- Soft Skills -->
+            <div class="skill-card" data-category="soft">
+                <h4>Problem Solving</h4>
+                <p>Analytical thinking</p>
+            </div>
+            <div class="skill-card" data-category="soft">
+                <h4>Willingness to Learn</h4>
+                <p>Continuous growth</p>
+            </div>
+            <div class="skill-card" data-category="soft">
+                <h4>Time Management</h4>
+                <p>Meeting deadlines</p>
+            </div>
+            <div class="skill-card" data-category="soft">
+                <h4>Team Collaboration</h4>
+                <p>Working with others</p>
+            </div>
+            <div class="skill-card" data-category="soft">
+                <h4>Attention to Detail</h4>
+                <p>Quality focus</p>
+            </div>
         </div>
     </main>
-
 
     <footer>
         <div class="footer-social">
@@ -123,6 +151,32 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Skills filter functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.filter-tabs .filter-btn');
+            const skillCards = document.querySelectorAll('.skill-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filter = this.dataset.filter;
+
+                    skillCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 
