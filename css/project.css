@@ -5,17 +5,17 @@
         }
 
         :root {
-            --text-color: #6b6b6b;
+            --text-color: #1d1b1b;
             --white: #ffffff;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         html.dark-theme {
-            background-color: #4a4a4a !important;
+            background-color: #1d1b1b !important;
         }
 
         html.dark-theme body {
-            background-color: #4a4a4a !important;
+            background-color: #1d1b1b !important;
         }
 
         body {
@@ -71,20 +71,28 @@
         }
 
         .theme-switcher {
-            background-color: var(--text-color);
-            color: #ffffff;
+            background-color: transparent;
+            color: var(--text-color);
             border: none;
-            padding: 0.6rem 1rem;
-            border-radius: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             cursor: pointer;
-            box-shadow: var(--shadow);
-            font-size: 1.2rem;
+            font-size: 1rem;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-left: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .theme-switcher:hover {
             transform: scale(1.1);
-            background-color: #8b8b8b;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-theme .theme-switcher:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         main {
@@ -272,34 +280,34 @@
         /* Dark Theme */
         .dark-theme {
             --text-color: #e5e5e5;
-            --white: #5a5a5a;
+            --white: #2a2828;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .dark-theme body {
-            background-color: #4a4a4a;
+            background-color: #1d1b1b;
         }
 
         .dark-theme header {
-            background-color: #5a5a5a;
+            background-color: #2a2828;
         }
 
         .dark-theme footer {
-            background-color: #3a3a3a;
-            border-top: 1px solid #5a5a5a;
+            background-color: #161414;
+            border-top: 1px solid #2a2828;
         }
 
         .dark-theme .project-card {
-            background-color: #5a5a5a;
-            border-color: #6a6a6a;
+            background-color: #2a2828;
+            border-color: #3a3838;
         }
 
         .dark-theme .filter-btn {
-            background-color: #3a3a3a;
+            background-color: #1d1b1b;
         }
 
         .dark-theme .filter-btn:hover {
-            background-color: #4a4a4a;
+            background-color: #2a2828;
         }
 
         .dark-theme .filter-btn.active {

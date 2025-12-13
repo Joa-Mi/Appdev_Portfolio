@@ -1,10 +1,10 @@
 /* Prevent white flash on page load - MUST BE FIRST */
 html.dark-theme {
-    background-color: #4a4a4a !important;
+    background-color: #252525 !important;
 }
 
 html.dark-theme body {
-    background-color: #4a4a4a !important;
+    background-color: #252525 !important;
 }
 
 * {
@@ -17,7 +17,7 @@ html.dark-theme body {
     --primary-color: #ffffff;
     --secondary-color: #ffffff;
     --accent-color: #ffffff;
-    --text-color: #6b6b6b;
+    --text-color: #1d1b1b;
     --light-bg: #ffffff;
     --white: #ffffff;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -25,8 +25,8 @@ html.dark-theme body {
 
 .dark-theme {
     --text-color: #e0e0e0;
-    --light-bg: #2d2d2d;
-    --white: #333333;
+    --light-bg: #1d1b1b;
+    --white: #2a2828;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -163,9 +163,12 @@ footer {
     background-color: var(--white);
     color: var(--text-color);
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     margin-top: 4rem;
     border-top: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-social {
@@ -192,6 +195,26 @@ footer {
     color: #ffffff;
 }
 
+/* Footer Image */
+.footer-image {
+    margin: 0 0 1rem 0;
+    display: flex;
+    justify-content: center;
+    order: -1;
+}
+
+.footer-img {
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    /* Rounded rectangle */
+    object-fit: cover;
+}
+
+.dark-theme .footer-img {
+    filter: brightness(0) invert(1);
+}
+
 /* Common Button Styles */
 .btn {
     display: inline-block;
@@ -210,33 +233,47 @@ footer {
     background-color: #8b8b8b;
 }
 
-/* Dark Theme - Gray Mode */
+/* Dark Theme - Charcoal Mode */
 .dark-theme {
-    --light-bg: #4a4a4a;
-    --white: #5a5a5a;
+    --light-bg: #222121;
+    --white: #222121;
     --text-color: #e5e5e5;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .dark-theme body {
-    background-color: #4a4a4a;
+    background-color: #222121;
 }
 
 .dark-theme html:hover {
-    background-color: #4a4a4a;
+    background-color: #222121;
 }
 
 .dark-theme header {
-    background-color: #5a5a5a;
+    background-color: #222121;
 }
 
 .dark-theme footer {
-    background-color: #3a3a3a;
-    border-top: 1px solid #5a5a5a;
+    background-color: #222121;
+    border-top: 1px solid #2a2828;
 }
 
 .dark-theme .container {
-    background-color: #5a5a5a;
+    background-color: #222121;
+}
+
+/* Logo Cat Image */
+.logo-cat {
+    height: 40px;
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.dark-theme .logo-cat {
+    background-color: #fff;
+    filter: none;
 }
 
 /* Animations */
@@ -288,8 +325,6 @@ footer {
     }
 }
 
-/* Responsive Design */
-/* Hamburger Menu */
 .hamburger {
     display: none;
     cursor: pointer;

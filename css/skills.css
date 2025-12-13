@@ -26,7 +26,7 @@
 }
 
 .filter-btn:hover {
-    border-color: var(--text-color);
+    background-color: #e0e0e0;
 }
 
 .filter-btn.active {
@@ -44,9 +44,9 @@
 /* Skills Container */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .skill-card {
@@ -55,13 +55,41 @@
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: var(--shadow);
-    border: 1px solid #f0f0f0;
+    border: 1px solid #e5e7eb;
     cursor: default;
+    /* Revert to block for standard cards */
+    display: block;
+    text-align: left;
+}
+
+/* Specific layout for Tools category */
+.skill-card[data-category="tools"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    box-shadow: none;
 }
 
 .skill-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--text-color);
+}
+
+.skill-icon {
+    margin-bottom: 0rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-icon svg {
+    width: 28px;
+    height: 28px;
 }
 
 .skill-card h4 {
@@ -71,9 +99,13 @@
     font-weight: 600;
 }
 
-.skill-card p {
-    color: #888;
+.skill-card[data-category="tools"] h4 {
     margin: 0;
+}
+
+.skill-card p {
+    color: #666;
+    margin-top: 0.5rem;
     font-size: 0.85rem;
 }
 
@@ -83,57 +115,55 @@
 
 /* Dark Theme */
 .dark-theme .skill-card {
-    background-color: #5a5a5a;
-    border: 1px solid #6a6a6a;
+    background-color: var(--white);
+    /* Use theme variable */
+    border: 1px solid #3a3838;
+}
+
+.dark-theme .skill-card:hover {
+    border-color: #fff;
+}
+
+.dark-theme .filter-btn.active {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
 }
 
 .dark-theme .filter-btn {
-    background-color: #3a3a3a;
+    background-color: #1d1b1b;
 }
 
 .dark-theme .filter-btn:hover {
-    background-color: #4a4a4a;
+    background-color: #2a2828;
+}
+
+
+.dark-theme .skill-icon {
+    color: #fff;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .skills-grid {
+    .skills-container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .skills-grid {
+    .skills-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* Keep 2 columns for compactness as per plan */
-        gap: 0.8rem;
+    .skills-container {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 column for small screens */
+        gap: 1rem;
     }
 
     .skill-card {
-        padding: 1rem;
-        /* Reduced padding */
-    }
-
-    .skill-icon-container {
-        width: 45px;
-        /* Smaller icon container */
-        height: 45px;
-        margin-bottom: 0.5rem;
-    }
-
-    .skill-icon {
-        font-size: 1.2rem;
-        /* Smaller icon */
-    }
-
-    .skill-card h3 {
-        font-size: 0.9rem;
-        /* Smaller text */
+        padding: 1.5rem;
     }
 }

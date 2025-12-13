@@ -63,7 +63,7 @@
 
 .dark-theme .form-group input,
 .dark-theme .form-group textarea {
-    background-color: #3a3a3a;
+    background-color: #1d1b1b;
     color: #fff;
 }
 
@@ -75,7 +75,7 @@
 
 .dark-theme .form-group input:focus,
 .dark-theme .form-group textarea:focus {
-    background-color: #4a4a4a;
+    background-color: #2a2828;
 }
 
 .form-group textarea {
