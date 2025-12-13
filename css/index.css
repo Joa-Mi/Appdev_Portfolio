@@ -162,7 +162,7 @@ main {
 
 .profile-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 515px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
