@@ -160,25 +160,33 @@
             object-fit: cover;
         }
 
-        .card-image .placeholder {
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
         .project-label {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            top: 10px;
+            left: 10px;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
             font-weight: 600;
-            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 1;
+        }
+
+        .label-group,
+        .label-groups,
+        .label-individual {
+            background-color: white;
             color: #333;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
+
+        .dark-theme .label-group,
+        .dark-theme .label-groups,
+        .dark-theme .label-individual {
+            background-color: white;
+            color: #333;
+        }
+
+        /* ... existing styles ... */
 
         .card-content {
             padding: 1.5rem;
@@ -211,7 +219,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-top: auto;
             margin-bottom: 1rem;
         }
 
@@ -331,5 +338,30 @@
 
             .projects-header h1 {
                 font-size: 2rem;
+            }
+
+            .project-card {
+                border-radius: 8px;
+                /* Slightly smaller radius */
+            }
+
+            .card-content {
+                padding: 1rem;
+                /* Reduced padding */
+            }
+
+            .card-image {
+                height: 150px;
+                /* Smaller image height */
+            }
+
+            .card-content h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .card-content p {
+                font-size: 0.9rem;
+                margin-bottom: 0.8rem;
             }
         }

@@ -69,7 +69,7 @@ main {
 
 .hero-text h1 {
     font-size: 3.5rem;
-    font-weight: 300;
+    font-weight: bold;
     color: var(--text-color);
     margin-bottom: 0.5rem;
     line-height: 1.2;
@@ -111,7 +111,7 @@ main {
 }
 
 .btn-primary {
-    background-color: #1a1a1a;
+    background-color: #232b2b;
     color: #ffffff;
 }
 

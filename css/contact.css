@@ -1,69 +1,44 @@
 /* Contact Page Specific Styles */
-
-
-
 .dark-theme .section-subtitle {
     color: #aaa;
 }
 
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
-    align-items: flex-start;
+/* Override container for contact page to create compact card */
+.container {
+    width: fit-content;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem 2.5rem;
 }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding-top: 1rem;
+.form-header {
+    text-align: left;
+    margin-bottom: 2rem;
 }
 
-.contact-info .info-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    border-bottom: none;
-    /* Removed border */
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-.contact-info .info-icon {
+.form-header h3 {
     font-size: 1.5rem;
     color: var(--text-color);
-    width: 24px;
-    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
-.contact-info .info-details p {
-    margin: 0;
+.form-header p {
     color: #666;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
-.dark-theme .contact-info .info-details p {
+.dark-theme .form-header p {
     color: #aaa;
 }
 
-.contact-info .info-details a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-info .info-details a:hover {
-    color: var(--text-color);
-    text-decoration: underline;
-}
-
-/* Contact Form */
+/* Contact Form - Centered */
 .contact-form {
     background: transparent;
     padding: 0;
     box-shadow: none;
     border: none;
+    width: 350px;
 }
 
 .form-group {
@@ -74,14 +49,16 @@
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    background-color: #f8f9fa;
-    /* Light grey background */
+    background-color: #f3f4f6;
+    /* Soft light gray */
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    /* Rounded corners */
     font-family: inherit;
     font-size: 0.95rem;
     color: var(--text-color);
     transition: background-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 .dark-theme .form-group input,
@@ -108,13 +85,12 @@
 
 .submit-btn {
     background-color: #000;
-    /* Black button */
     color: #fff;
     width: 100%;
     padding: 1rem;
     font-size: 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 500;
     transition: opacity 0.3s ease;
@@ -128,20 +104,5 @@
 .submit-btn:hover {
     opacity: 0.9;
     transform: none;
-    /* Override common btn style */
     box-shadow: none;
-    /* Override common btn style */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .info-item {
-        justify-content: center;
-        /* Center items on mobile if preferred, or keep left aligned */
-    }
 }

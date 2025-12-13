@@ -24,7 +24,12 @@
 <body>
     <header>
         <nav>
-            <div class="logo">My Portfolio</div>
+            <div class="logo">Joa-Mi</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active-page">About</a></li>
@@ -37,98 +42,80 @@
     </header>
 
     <main>
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="header-line"></div>
+        <h2 class="section-title">About Me</h2>
+        <div class="header-line"></div>
 
-            <div class="about-grid">
-                <!-- Left Side (Empty/Image placeholder if needed, but per design image is implied or maybe hidden effectively? 
-                     Actually looking at the screenshot, the "About Me" is centered at top, 
-                     then "Dedicated Developer..." is right aligned relative to a big empty space or image.
-                     Wait, looking closer at the screenshot:
-                     There is a "About me" label on the far left with a small leaf/flower image.
-                     The main text is pushed to the right side.
-                     
-                     Let's check the current about.html. It has an image on left.
-                     The user screenshot shows:
-                     Left: White space + "About me" text with small graphic? Or is that just a watermark?
-                     Right: Content.
-                     
-                     Actually, re-reading the screenshot 1:
-                     Top center: "About Me" with underline.
-                     Content is split.
-                     Left: Empty? Or maybe the image is missing?
-                     Ah, the user provided `uploaded_image_0` which looks like a screenshot of the about page.
-                     It shows "About Me" title.
-                     Then a large area.
-                     Left side has a small "About me" text with a flower.
-                     Right side calculates "Dedicated Developer & Problem Solver" and text, and then the grid.
-                     
-                     I will try to keep the `about-image` div but maybe it needs to be adjusted or the user wants the specific layout.
-                     
-                     Let's stick to the plan: layout 2 column.
-                     Left: Image (I'll keep the existing image placeholder).
-                     Right: Text content + Skills Grid.
-                -->
+        <div class="about-grid">
+            <img src="images/myimage.jpg" alt="About Visual" class="about-decoration"
+                onerror="this.onerror=null;this.src='images/myimage.png';">
 
-                <div class="about-image-container">
-                    <!-- Keeping existing image or placeholder -->
-                    <img src="images/myimage.jpg" alt="About Visual" class="about-decoration"
-                        onerror="this.onerror=null;this.src='images/myimage.png';">
-                    <!-- If they want the specific 'flower' design, I can't generate it, but I can structure it.
-                          Usage of `joana.png` as fallback. -->
-                </div>
+            <div class="about-text-content">
+                <h3>IT Student &amp; Aspiring Developer</h3>
+                <p>I'm currently an IT student who is still learning and building my skills in web development and
+                    programming. My journey started in college, and ever since, I've been exploring different
+                    technologies to understand how real-world systems and applications are built.</p>
 
-                <div class="about-text-content">
-                    <h3>IT Student & Aspiring Developer</h3>
-                    <p>I’m currently an IT student who is still learning and building my skills in web development and
-                        programming. My journey started in college, and ever since, I’ve been exploring different
-                        technologies to understand how real-world systems and applications are built.</p>
-
-                    <p>Even though I’m still gaining experience, I enjoy solving problems, creating small projects, and
-                        improving step by step. I’m committed to learning, growing, and becoming a skilled developer in
-                        the future through practice and continuous learning.</p>
-                </div>
-
-                <div class="education-section">
-                    <div class="education-header">
-                        <span class="icon">🎓</span>
-                        <h3>Education</h3>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-top-row">
-                            <h4 class="degree">Bachelor of Science in Information Technology</h4>
-                            <span class="year-badge">📅 2021 - 2025</span>
-                        </div>
-                        <p class="university">Camarines Norte State College</p>
-                        <p class="education-desc">
-                            Learning frontend development and UI design, focusing on creating simple and responsive
-                            websites.
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="coursework-section">
-                    <div class="education-header">
-                        <span class="icon">🔖</span>
-                        <h3>Relevant Coursework</h3>
-                    </div>
-                    <div class="coursework-tags">
-                        <span class="course-tag">Web Development</span>
-                        <span class="course-tag">Mobile Apps</span>
-                        <span class="course-tag">Database Systems</span>
-                        <span class="course-tag">Algorithms</span>
-                    </div>
-                </div>
+                <p>Even though I'm still gaining experience, I enjoy solving problems, creating small projects, and
+                    improving step by step. I'm committed to learning, growing, and becoming a skilled developer in
+                    the future through practice and continuous learning.</p>
             </div>
         </div>
+
+        <div class="education-section">
+            <div class="education-header">
+                <span class="icon">🎓</span>
+                <h3>Education</h3>
+            </div>
+
+            <div class="education-card">
+                <div class="education-top-row">
+                    <h4 class="degree">Bachelor of Science in Information Technology</h4>
+                    <span class="year-badge">📅 2021 - 2025</span>
+                </div>
+                <p class="university">Camarines Norte State College</p>
+                <p class="education-desc">
+                    Learning frontend development and UI design, focusing on creating simple and responsive
+                    websites.
+                </p>
+            </div>
+        </div>
+
+        <div class="coursework-section">
+            <div class="education-header">
+                <span class="icon">🔖</span>
+                <h3>Relevant Coursework</h3>
+            </div>
+            <div class="coursework-tags">
+                <span class="course-tag">Web Development</span>
+                <span class="course-tag">Mobile Apps</span>
+                <span class="course-tag">Database Systems</span>
+                <span class="course-tag">Algorithms</span>
+            </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Sevilla, Joana Mikaela R..</p>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/joana.sevilla.737" target="_blank" title="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                </svg>
+            </a>
+            <a href="https://github.com/Joa-Mi" target="_blank" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+            <a href="mailto:mmik70999@gmail.com" title="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                </svg>
+            </a>
+        </div>
+        <p>&copy; 2025 Sevilla, Joana Mikaela R.</p>
     </footer>
 
     <script src="script.js"></script>

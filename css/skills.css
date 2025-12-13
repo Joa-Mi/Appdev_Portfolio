@@ -88,6 +88,30 @@
 
 @media (max-width: 480px) {
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        /* Keep 2 columns for compactness as per plan */
+        gap: 0.8rem;
+    }
+
+    .skill-card {
+        padding: 1rem;
+        /* Reduced padding */
+    }
+
+    .skill-icon-container {
+        width: 45px;
+        /* Smaller icon container */
+        height: 45px;
+        margin-bottom: 0.5rem;
+    }
+
+    .skill-icon {
+        font-size: 1.2rem;
+        /* Smaller icon */
+    }
+
+    .skill-card h3 {
+        font-size: 0.9rem;
+        /* Smaller text */
     }
 }

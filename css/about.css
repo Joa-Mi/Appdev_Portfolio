@@ -19,6 +19,11 @@
 .about-decoration {
     max-width: 100%;
     height: auto;
+    border-radius: 12px;
+}
+
+.about-text-content {
+    padding-top: 1.5rem;
 }
 
 .about-text-content h3 {
