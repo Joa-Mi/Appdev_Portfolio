@@ -51,13 +51,13 @@
     padding: 1rem;
     background-color: #f3f4f6;
     /* Soft light gray */
-    border: none;
+    border: 2px solid transparent;
     border-radius: 8px;
     /* Rounded corners */
     font-family: inherit;
     font-size: 0.95rem;
     color: var(--text-color);
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     box-sizing: border-box;
 }
 
@@ -71,11 +71,13 @@
 .form-group textarea:focus {
     outline: none;
     background-color: #e9ecef;
+    border-color: #000;
 }
 
 .dark-theme .form-group input:focus,
 .dark-theme .form-group textarea:focus {
     background-color: #2a2828;
+    border-color: #fff;
 }
 
 .form-group textarea {

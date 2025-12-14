@@ -38,8 +38,8 @@
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html" class="active-page">Contact</a></li>
-                <li><button class="theme-switcher" id="themeToggle" title="Toggle Dark Mode">🌙</button></li>
             </ul>
+            <button class="theme-switcher" id="themeToggle" title="Toggle Dark Mode">🌙</button>
         </nav>
     </header>
 
@@ -55,19 +55,21 @@
             </div>
 
             <!-- Contact Form (Right) -->
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xanygorp" method="POST">
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/mmik70999@gmail.com"
+                method="POST">
+                <input type="hidden" name="_captcha" value="false">
                 <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
                     <span class="error-message"></span>
                 </div>
 
                 <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                     <span class="error-message"></span>
                 </div>
 
                 <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
                     <span class="error-message"></span>
                 </div>
 
